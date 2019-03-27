@@ -210,7 +210,7 @@ elseif(BUILD_SHARED_LIBS AND WIN32)
     set_target_properties(zlib PROPERTIES SUFFIX "1.dll")
 endif()
 
-# Commented for D/Labs Smode Jenkins build and install
+# Commented for Smode Jenkins build and install
 #if(NOT SKIP_INSTALL_LIBRARIES AND NOT SKIP_INSTALL_ALL )
 #    install(TARGETS zlib zlibstatic
 #        RUNTIME DESTINATION "${INSTALL_BIN_DIR}"
@@ -230,7 +230,7 @@ endif()
 #============================================================================
 # Example binaries
 #============================================================================
-IF (ZLIB_BUILD_TEST) # D/Labs
+IF (ZLIB_BUILD_TEST) # Smode
   add_executable(example test/example.c)
   target_link_libraries(example zlib)
   add_test(example example)
@@ -248,4 +248,4 @@ IF (ZLIB_BUILD_TEST) # D/Labs
       target_link_libraries(minigzip64 zlib)
       set_target_properties(minigzip64 PROPERTIES COMPILE_FLAGS "-D_FILE_OFFSET_BITS=64")
   endif()
-ENDIF(ZLIB_BUILD_TEST) #D/Labs 
+ENDIF(ZLIB_BUILD_TEST) #Smode 
